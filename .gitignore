@@ -31,11 +31,11 @@ Thumbs.db
 ###################### IDE configurations #######
 
 ########### IntelliJ Idea
-.idea/
+#.idea/
 .intellij/
 *.eml
 *.iws
-*.iml
+#*.iml
 *.ipr
 out/
 

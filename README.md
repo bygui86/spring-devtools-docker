@@ -15,7 +15,7 @@ Sample project to understand Spring DevTools for Docker
 
 3. Change (comment/uncomment lines) greeting in `GenericController` without stopping application
 
-4. Wait a bit for IntelliJ IDEA to rebuild and Spring DevTools to reload the application
+4. Rebuild the application in IntelliJ IDEA and wait for Spring DevTools to automatically reload the application without restarting the JVM or else
 
 5. Test the application greeting again
 
@@ -39,19 +39,21 @@ Sample project to understand Spring DevTools for Docker
 
 4. Click on `Edit configurations` in IntelliJ IDEA and add a new `Application` with following parameters:
 
-    - name: remote SpringDevtoolsDockerApplication
-    - main class: com.rabbit.samples.springdevtoolsdocker.SpringDevtoolsDockerApplication
+    - name: RemoteSpringApplication
+    - main class: org.springframework.boot.devtools.RemoteSpringApplication
     - program arguments: http://localhost:8080
+    
+    `RemoteSpringApplication` is effectively a file watcher that notifies a running application that its files were changed
 
-5. Start the new `remote SpringDevtoolsDockerApplication` application in IntelliJ IDEA
+5. Start the new `RemoteSpringApplication` application in IntelliJ IDEA 
 
-6. Test the application greeting again
+6. Enable `WorldController` uncommenting `@RestController` annotation
+
+7. Rebuild the application in IntelliJ IDEA and wait for Spring DevTools to automatically reload the application without restarting the JVM, the container or else
+
+8. Test the application greeting again
 
     `curl http://localhost:8080`
-
-7. Enable `WorldController` uncommenting `@RestController` line
-
-8. Wait a bit for IntelliJ IDEA to rebuild and Spring DevTools to reload the application but in container
 
 9. Test the application new greeting
 
